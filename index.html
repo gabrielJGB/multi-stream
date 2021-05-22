@@ -249,6 +249,11 @@
 	<script src="https://player.twitch.tv/js/embed/v1.js"></script>
 
 	<script>
+		
+		if ("serviceWorker" in navigator) {
+ 		   navigator.serviceWorker.register("service-worker.js");
+		}
+		
 		let boxes = document.querySelectorAll('#box');
 		let slider = document.getElementById("myRange");
 		let output = document.getElementById("demo");

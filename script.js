@@ -27,7 +27,7 @@ slideContainer.addEventListener('mouseout',hideRange);
 
 function showRange(){
 	slideLeft.style.display = "";
-	console.log("aa")
+	
 }
 
 function hideRange(){
@@ -74,13 +74,14 @@ function addVideo(user) {
 
     boxCount++;
     box.id = "box" + boxCount;
+	
 
     let player = new Twitch.Player(box, {
         channel: user,
         height: videoHeight,
         width: videoWidth
     });
-	player.setVolume(0.5);
+	player.setVolume(0.1);
     box.appendChild(deleteButton);
     container.appendChild(box);
     containerArray = Array.from(container.children);

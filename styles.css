@@ -182,3 +182,12 @@ body {
     color:#1b1b1b;
 	text-shadow: 0 0 3px #000000bf;
 }
+.user-div{
+	z-index: 2;
+    position: absolute;
+    text-shadow: 0 0 5px #131313;
+    color: #ffffffcc;
+    font-size: 14px;
+    padding: 2px;
+	
+}

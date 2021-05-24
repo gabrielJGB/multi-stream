@@ -25,6 +25,14 @@ slideLeft.style.display = "none";
 slideContainer.addEventListener('mouseover',showRange);
 slideContainer.addEventListener('mouseout',hideRange);
 
+document.addEventListener('keydown',(e)=>{
+	if(e.key === 'Enter'){
+		let user = searchInput.value;
+		addVideo(user);
+		searchInput.value = "";
+	}
+});
+
 function showRange(){
 	slideLeft.style.display = "";
 	
@@ -57,20 +65,25 @@ acceptButton.addEventListener('click', ()=>{
 
 users.forEach((user) => {
     user.addEventListener('click', (e)=>{
-        addVideo(e.target.textContent)
+        addVideo(e.target.textContent);
     });
 })
 
 function addVideo(user) {
     
     let box = document.createElement('DIV');
-    let deleteButton = document.createElement('BUTTON');
     box.style.display = "flex";
     box.style["flex-direction"] = "column";
     box.style["box-shadow"] = "0 0 10px #0e0e0e";
+	
+	let deleteButton = document.createElement('BUTTON');
     deleteButton.textContent = "Borrar";
     deleteButton.className = "delete-button";
     deleteButton.addEventListener('click', removeVideo);
+	
+	let userDiv = document.createElement('DIV');
+	userDiv.textContent = user;
+	userDiv.className = "user-div";
 
     boxCount++;
     box.id = "box" + boxCount;
@@ -81,11 +94,11 @@ function addVideo(user) {
         height: videoHeight,
         width: videoWidth
     });
-	player.setVolume(0.1);
+	
+	box.appendChild(userDiv);
     box.appendChild(deleteButton);
     container.appendChild(box);
     containerArray = Array.from(container.children);
-
     closeWindow();
 }
 

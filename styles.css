@@ -183,11 +183,10 @@ body {
 	text-shadow: 0 0 3px #000000bf;
 }
 .user-div{
-	z-index: 2;
+    z-index: 2;
     position: absolute;
-    text-shadow: 0 0 5px #131313;
-    color: #ffffffcc;
-    font-size: 14px;
+    text-shadow: 0 0 2px #000000;
+    color: white;
+    font-size: 15px;
     padding: 2px;
-	
 }

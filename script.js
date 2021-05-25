@@ -38,8 +38,14 @@ function showRange(){
 	
 }
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+	slideLeft.style.display = "";
+}
+
 function hideRange(){
-	slideLeft.style.display = "none";
+	if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+		slideLeft.style.display = "none";
+	}
 }
 
 windowButton.addEventListener('click', showWindow);
